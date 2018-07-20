@@ -1,20 +1,28 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 
 
 export default class TestComponent extends React.Component {
     render() {
         return (
-            <Text>test</Text>
+            <View style={styles.container}>
+                <Text style={styles.textColor}>TestComponent</Text>
+            </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    padding: 10,
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  textColor: {
+    padding: 10,
+    fontSize: 24,
+    backgroundColor: 'grey',
+    color: '#00FF00',
+},
 });
