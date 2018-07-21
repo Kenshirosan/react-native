@@ -6,7 +6,7 @@ export default class TestComponent extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.textColor}>TestComponent</Text>
+                <Text style={styles.textColor}>TestComponentAndroid</Text>
             </View>
         );
     }

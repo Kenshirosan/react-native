@@ -1,34 +1,39 @@
+import Expo from 'expo';
 import React from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
-import TestComponent from './components/TestComponent';
-
+// import { StyleSheet } from 'react-native';
+import { Container, Content } from 'native-base';
+import Head from './ui/Head';
+import Body from './ui/Body';
 
 export default class App extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      isReady: false,
+    };
+  }
+
+  async componentWillMount() {
+    await Expo.Font.loadAsync({
+      'Roboto': require('native-base/Fonts/Roboto.ttf'),
+      'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+      'Ionicons': require('native-base/Fonts/Ionicons.ttf'),
+    });
+
+      this.setState({ isReady: true});
+  }
+
   render() {
+    if (!this.state.isReady) {
+      return <Expo.AppLoading />;
+    }
+
     return (
-      <View style={styles.container}>
-        {/*<Text>Toto va a la plage</Text>*/}
-        {/*<Text>J'y crois pas</Text>*/}
-        {/*<Text>yes this shit is working, and well, just A bit of lag</Text>*/}
-        {/*<TestComponent />*/}
-        <TextInput placeholder="Enter the amount" style={styles.input} />
-      </View>
+      <Container>
+        <Head />
+        <Body />
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
-  },
-  input: {
-    height: 40,
-    width: '100%',
-    borderColor: '#333',
-    padding: 5,
-  }
-});
