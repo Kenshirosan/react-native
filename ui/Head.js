@@ -3,20 +3,17 @@ import { StyleSheet, View, Platform, StatusBar } from 'react-native';
 import { Header, Left, Body, Title, Right } from 'native-base';
 
 
+const Head = () =>
+    (
+        <Header style={styles.header}>
+            <Left/>
+                <Body>
+                    <Title>Calculate a Tip</Title>
+                </Body>
+            <Right/>
+        </Header>
+    )
 
-export default class Head extends Component {
-    render() {
-        return (
-            <Header style={styles.header}>
-                <Left/>
-                    <Body>
-                        <Title>Calculate a Tip</Title>
-                    </Body>
-                <Right/>
-            </Header>
-        )
-    }
-}
 
 const styles = StyleSheet.create({
   header: {
@@ -27,3 +24,5 @@ const styles = StyleSheet.create({
     })
   }
 });
+
+export default Head;
