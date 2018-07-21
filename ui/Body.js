@@ -15,6 +15,7 @@ export default class Body extends Component {
   }
   updateCustomTip(customTip) {
     if (customTip) {
+
       return this.setState({
         tip: parseFloat(customTip) / 100
       });
@@ -34,7 +35,7 @@ export default class Body extends Component {
                 keyboardType="numeric"
                 onChangeText={ text => this.setState({inputValue: text})}
                 value={this.state.inputValue}
-                placeholder="0.00"
+                placeholder="Enter the bill amount"
                 underlineColorAndroid="white"
                 placeholderTextColor="white"
                 style={styles.input}
@@ -42,7 +43,9 @@ export default class Body extends Component {
               <View style={styles.buttonGroup}>
                 <Button
                   title="10%"
-                  onPress={() => this.setState({ tip: 0.1 })}
+                  onPress={() => {
+                    this.setState({ tip: 0.1 })}
+                  }
                 />
                 <Button
                   title="20%"

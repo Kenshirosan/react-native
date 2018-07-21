@@ -1,5 +1,15 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
+    "sdkVersion": "27.0.0",
+    "name": "Tip Calc",
+    "version": "1.0",
+    "slug": "tipcalc",
+    "icon": "./logo.png",
+    "ios": {
+        "bundleIdentifier": "com.restopronyc.tipcalc"
+    },
+    "android": {
+        "package": "com.restopronyc.tipcalc"
+    }
   }
 }
